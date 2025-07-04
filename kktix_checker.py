@@ -21,7 +21,7 @@ def send_line_push(text):
 
 def check_ticket():
     try:
-        response = requests.get(KKTIX_URL)
+        response = requests.get(KKTIX_URL, verify=False)
         if response.status_code == 200:
             print('KKTIX 網頁成功讀取')
             send_line_push('【KKTIX票券檢查】已檢查票券，請手動確認網站。')
